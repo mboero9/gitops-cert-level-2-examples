@@ -18,6 +18,8 @@ spec:
               selector:
                 matchLabels:
                   argocd.argoproj.io/secret-type: cluster
+                   syncPolicy:
+                      automated: auto-sync/self-heal/createNamespace
   template:
     metadata:
       name: '{{path.basename}}-{{name}}'
